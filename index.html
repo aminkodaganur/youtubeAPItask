@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Youtube API</title>
+	<link rel="stylesheet" href="dist/assets/api/sematicui/semantic.min.css" />
+	<link rel="stylesheet" type="text/css" href="http://oss.maxcdn.com/semantic-ui/2.1.8/components/icon.min.css">
+	<link rel="stylesheet" href="dist/assets/css/styles.css" />
+</head>
+<body ng-app="youtubeApp">
+	
+	<div class="preloader">
+		<div class="loader">
+			<i class="notched circle loading big icon"></i>
+		</div>
+		<p class="pull-text-center">Loading your page..</p>
+	</div>
+	<div class="page">
+		
+		<section class="main-section">
+			
+			<section class="full-width-solid-section"></section>
+			<section class="containt-section pull-down">
+				
+				<div class="ui container">
+					
+					<div class="ui main segment">
+						
+						<h3 class="ui header">Youtube API using AngularJS</h3>
+						<div class="ui divider"></div>
+						<search-field></search-field>
+						<div class="ui horizontal divider">results</div>
+						<div ui-view></div>						 
+						<div class="ui divider"></div>
+						<p class="pull-text-center">see other work @ <a href="https://github.com/aminkodaganur" target="_blank">github</a> </p>
+					</div>
+
+				</div>
+
+			</section>
+
+		</section>
+		
+		
+
+	</div>
+	<!-- Api framework files -->
+	<script type="text/javascript" src="dist/assets/api/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="dist/assets/api/sematicui/semantic.min.js"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			$('.preloader').slideUp('fast',function(){
+				$('.page').slideDown('slow');
+			});
+		};
+	</script>
+	<!-- AngularJS files -->
+	<script type="text/javascript" src="dist/assets/api/angular/angular.min.js"></script>
+	<script type="text/javascript" src="dist/assets/api/angular/angular-ui-router.min.js"></script>
+	<script type="text/javascript" src="dist/app/factories/youtube-api-factory.js"></script>	
+	<script type="text/javascript" src="dist/app/factories/angular-youtube-embed.js"></script>
+
+	<script type="text/javascript" src="dist/app/config.js"></script>
+	<script type="text/javascript" src="dist/app/factories/factories.js"></script>
+	<script type="text/javascript" src="dist/app/controllers/controllers.js"></script>
+	<script type="text/javascript" src="dist/app/directives/directives.js"></script>
+	
+
+</body>
+</html>

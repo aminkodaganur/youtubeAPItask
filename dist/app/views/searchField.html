@@ -1,0 +1,16 @@
+<div ng-controller="appHomeController">
+	<div class="ui stackable grid">
+		<div class="twelve wide column">
+			<div class="ui fluid action input">
+				<input type="text" placeholder="Search..." ng-model="searchQuery" ng-keyup="findAutofill()">
+				<button class="ui right labeled icon blue button" ng-click="findVideos()">
+				  <i class="search icon"></i>
+				  Search
+				</button>
+			</div>
+		</div>
+	</div>
+	<a href="javascript:void(0)" ng-repeat="key in autoFillResult track by $index" ng-click="applyKey(key)" class="tags">
+		{{key}}
+	</a>
+</div>

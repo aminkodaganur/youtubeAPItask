@@ -1,0 +1,36 @@
+
+
+<div class="ui stackable grid">
+	<div class="twelve wide column">
+		<p>Showing result for <b>{{q}}</b></p>
+	</div>
+	<div class="four wide column pull-text-right">
+		<button class="ui icon button" ng-click="sortBy('publishedDate')">
+		  <i class="sort content ascending icon"></i>
+		</button>
+		<button class="ui icon button" ng-click="sortBy('title')">
+		  <i class="sort alphabet ascending icon"></i>
+		</button>
+	</div>
+</div>
+
+
+<div class="ui stackable grid">
+	<div class="five wide column" ng-repeat="video in videosList | orderBy:propertyName:reverse track by $index">
+		<div class="ui stacked segment">
+			
+			<div class="embed-responsive embed-responsive-16by9">
+				<youtube-video class="embed-responsive-item" video-id="video.videoID"></youtube-video>
+			</div>
+
+			<div class="ui divider"></div>
+			<h4>{{video.title}}</h4>
+			<p class="published">Published {{video.timeDiff}}</p>
+		</div>
+	</div>
+</div>	
+<script>
+jQuery(document).ready(function($) {
+    $('.embed').embed();		
+});
+
