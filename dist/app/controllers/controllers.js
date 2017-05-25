@@ -1,5 +1,6 @@
 youtubeApp.controller('appHomeController', ['$scope','$state','autoComplete', function($scope,$state,autoComplete){
 	
+	console.log($state);
 	$scope.findVideos = function(){
 		if($.trim($scope.searchQuery) == ""){
 			// do nothing
@@ -31,7 +32,7 @@ youtubeApp.controller('appHomeController', ['$scope','$state','autoComplete', fu
 }]);
 
 youtubeApp.controller('youtubeResultsCntlr',['$scope','$stateParams','youtubeFactory', function($scope,$stateParams,youtubeFactory){
-
+	console.log($state);
 	$scope.q = $stateParams.query;
 	var apiKey = "AIzaSyAWBYy__s8QXHlVU2tnm4XTXtmCkphRbJQ";
     $scope.videosList = [];
